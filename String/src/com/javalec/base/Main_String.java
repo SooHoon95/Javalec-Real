@@ -15,18 +15,18 @@ public class Main_String {
 		//new 뒤는 생성자.  sc 는 object or instance 또는 객체 =변
 		
 
-		String str1 = "avcdefg";
+		String str1 = "avcdefa";
 		String str2 = "HIJKLMN";
 		String str3 = "opqrstu";
 		String str4 =  " abv def ghi ";
-		
-		System.out.println(str1.concat(str2));  	// concat 은 문자열 연결시켜주는 애
-		System.out.println(str1.substring(3)); 		//3까지는 출력 안함
-		System.out.println(str1.substring(3, 5)); 	//해당 문자열에 3/5 번째 글짜 출력
-		System.out.println(str1.length());  		//글자 갯수 출력
-		System.out.println(str1.toUpperCase());		//대문자 출력
-		System.out.println(str2.toLowerCase());		//소문자 출력
-		System.out.println(str1.charAt(3));			// 3번째 뒤에 값만출력
+		int tot = 0;
+//		System.out.println(str1.concat(str2));  	// concat 은 문자열 연결시켜주는 애
+//		System.out.println(str1.substring(3)); 		//3까지는 출력 안함
+//		System.out.println(str1.substring(3, 5)); 	//해당 문자열에 3부터 5 번째 전까지 글짜 출력
+//		System.out.println(str1.length());  		//글자 갯수 출력
+//		System.out.println(str1.toUpperCase());		//대문자 출력
+//		System.out.println(str2.toLowerCase());		//소문자 출력
+		System.out.println(str1.charAt(3));			// 3번째 값만출력
 			
 		// str 1을 알파벳 하나씩 출력하기
 		
@@ -41,7 +41,6 @@ public class Main_String {
 		System.out.println(str1);				// 위에서 replace 썻다고 다음에도 바뀌는 거 아님. 해당코드에서만 바뀜.ㅎ 
 		System.out.println(str1.replaceAll("avc" , "ZZZZZ")); // 해당 문자열 바꾸기 ㅋ
 
-		
 		
 		
 		

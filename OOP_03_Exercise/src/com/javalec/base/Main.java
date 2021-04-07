@@ -43,7 +43,7 @@ public class Main {
 //				=============================
 //		///프린트해서 내보내기 >> 프린트 메소드 만들기
 		
-		addNum.plusprint(num1,num2);
+//		addNum.plusprint(num1,num2);
 //		addNum.minprint(num1, num2);
 //		addNum.mulprint(num1, num2);
 //		addNum.shprint(num1,num2);

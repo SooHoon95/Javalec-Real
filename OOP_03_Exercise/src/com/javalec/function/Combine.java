@@ -48,9 +48,9 @@ public class Combine {
 //	=============================
 //	///프린트해서 내보내기
 	
-	public void plusprint(int i, int j) {
-		System.out.println("덧셈 결과는 :  " + (i + j));
-	}
+//	public void plusprint(int i, int j) {
+//		System.out.println("덧셈 결과는 :  " + (i + j));
+//	}
 //	
 //	public void minprint(int i, int j) {
 //		if ( i >= j ) {

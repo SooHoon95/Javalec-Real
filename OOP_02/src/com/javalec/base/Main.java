@@ -1,4 +1,4 @@
-package com.javalec.base;
+ package com.javalec.base;
 
 import com.javalec.function.SumEvenOdd;
 import com.javalec.function.SumEvenOdd02;

@@ -2,6 +2,7 @@ package com.javalec.base;
 
 
 import com.javalec.function.AddNum;
+import com.javalec.function.AddNum2;
 
 public class Main {
 
