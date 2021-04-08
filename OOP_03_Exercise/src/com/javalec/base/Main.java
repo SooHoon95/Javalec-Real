@@ -57,8 +57,8 @@ public class Main {
 		
 //		//Field 값으로 호출하기
 		
-		addNum.num1= num1;
-		addNum.num2= num2;
+//		addNum.num1= num1;
+//		addNum.num2= num2;
 //		int plusResult = (num1 + num2);
 //		int minusResult = (num1 - num2);
 //		int multiResult = (num1 * num2);
