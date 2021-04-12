@@ -6,12 +6,13 @@ public class Main {
 		// TODO Auto-generated method stub
 
 		ParentsMenu parentsMenu = new ParentsMenu();
-		parentsMenu.makeChung();
+//		parentsMenu.makeChung();
 		
 		
 		ChildMenu childMenu = new ChildMenu();
 		childMenu.makeChung();
 		childMenu.makeDoen();
+		childMenu.makeGal();
 		
 	}
 

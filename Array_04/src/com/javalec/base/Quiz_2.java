@@ -1,4 +1,4 @@
-package com.javalec.base;
+//package com.javalec.base;
 
 import java.util.Scanner;
 

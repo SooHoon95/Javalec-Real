@@ -3,7 +3,7 @@ package com.javalec.function;
 public class DmbCellPhone extends CellPhone {
 
 	//Fields
-	public int channel;
+	public int channel ;
 	
 	//Constructor
 	public DmbCellPhone() {	//기본컨스트럭트는 무조건 만들어 주는게 좋다 어떨 때 쓰일 지 모르니깐... 근데 어떨 때 쓰임..?
@@ -19,8 +19,8 @@ public class DmbCellPhone extends CellPhone {
 	
 	
 	//Method
-	public void turnOnDmb(int channel) {
-		System.out.println("채널" + channel + "번 DMB 방송 수신을 시작 합니다.");
+	public void turnOnDmb() {
+		System.out.println("채널" + channel + "번 DMB ㄴ방송 수신을 시작 합니다.");
 	}
 
 	public void changeChannelDmb(int channel) {

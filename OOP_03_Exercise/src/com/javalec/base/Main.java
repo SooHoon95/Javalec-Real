@@ -2,11 +2,8 @@ package com.javalec.base;
 
 import java.util.Scanner;
 
-import com.javalec.function.AddMinus;
-import com.javalec.function.AddMulti;
-import com.javalec.function.AddPlus;
-import com.javalec.function.Addshare;
 import com.javalec.function.Combine;
+
 
 public class Main {
 

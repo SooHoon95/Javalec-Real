@@ -24,6 +24,7 @@ public class Main_Random {
 		Scanner sc = new Scanner(System.in);
 		String[] user = { "가위" , "바위" , "보"};
 		
+		
 		Random random  = new Random();
 		int i = random.nextInt(3);
 		
@@ -33,7 +34,7 @@ public class Main_Random {
 			i = random.nextInt(3);
 			System.out.print("가위 바위 보!! : ( 가위:1 ,바위:2, 보:3 )");
 				choice = sc.nextInt();
-				if (choice==1 && (i+1)==1) {
+				if (choice == 1 && (i+1)==1) {
 					System.out.println("DRAW");
 //					break;
 				}else if (choice==1 && (i+1)==2) {

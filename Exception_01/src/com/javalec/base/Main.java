@@ -6,8 +6,8 @@ public class Main {
 		// TODO Auto-generated method stub
 
 		
-		int i = 10;
-		int j = 3;
+		int i = 0;
+		int j = 1;
 		System.out.println("Add : " + (i + j));
 		System.out.println("sub : " + (i - j));
 		System.out.println("Mul : " + (i * j));

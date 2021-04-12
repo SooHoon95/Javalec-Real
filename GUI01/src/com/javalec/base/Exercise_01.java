@@ -55,6 +55,7 @@ public class Exercise_01 {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setResizable(false);
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -71,6 +72,15 @@ public class Exercise_01 {
 		frame.getContentPane().add(getBtnMinus());
 		frame.getContentPane().add(getBtnMul());
 		frame.getContentPane().add(getBtnDiv());
+		
+		JButton btnReset = new JButton("Reset");
+		btnReset.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+					Reset();
+			}
+		});
+		btnReset.setBounds(176, 81, 97, 23);
+		frame.getContentPane().add(btnReset);
 	}
 
 	private JLabel getLblNewLabel() {
@@ -84,6 +94,7 @@ public class Exercise_01 {
 		if (lblNewLabel_1 == null) {
 			lblNewLabel_1 = new JLabel("2 : ");
 			lblNewLabel_1.setBounds(12, 85, 18, 15);
+			
 		}
 		return lblNewLabel_1;
 	}
@@ -144,6 +155,11 @@ public class Exercise_01 {
 	private JTextField getTfResult() {
 		if (tfResult == null) {
 			tfResult = new JTextField();
+			tfResult.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+				Reset();
+				}
+			});
 			tfResult.setEditable(false);
 			tfResult.setHorizontalAlignment(SwingConstants.RIGHT);
 			tfResult.setColumns(10);
@@ -207,6 +223,7 @@ public class Exercise_01 {
 	
 	//=======  불러올 메소드 작성
 	public void addSum() {
+		int tot =0;
 		tffactor1.setText(tfinputNum1.getText());
 		tffactor2.setText(tfinputNum2.getText());
 		lblsign.setText("+");
@@ -257,10 +274,16 @@ public class Exercise_01 {
 			JOptionPane.showMessageDialog(null, "0으로는 나눌 수 없습니다.");
 		}else tfResult.setText(String.format("%.3f", wkResult));
 	}
-//	============
-//public int num1 = Integer.parseInt(tfinputNum1.getText());
-//public int num2 = Integer.parseInt(tfinputNum2.getText());
-//	============	
+	
+	public void Reset() {
+		
+		tfinputNum1.setText("");		
+		tfinputNum2.setText("");		
+		tffactor1.setText("");		
+		tffactor2.setText("");		
+		tfResult.setText("");		
+		
+	}
 	
 	
 }//----==========

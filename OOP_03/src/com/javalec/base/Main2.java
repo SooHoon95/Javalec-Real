@@ -10,9 +10,11 @@ public class Main2 {
 		int num1 = 10 , num2 = 20;
 		
 		
-		AddNum addNum = new AddNum2(num1,num2);
-		int addResult = addNum.addconst();
-		System.out.println(addResult));
+		AddNum2 addNum = new AddNum2(num1,num2);
+		addNum.addconst(num1,num2);
+//		System.out.println(addResult);
+		
+		
 		
 		
 	}

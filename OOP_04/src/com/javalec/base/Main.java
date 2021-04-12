@@ -7,7 +7,7 @@ public class Main {
 		int[] num = {1,2,3,4,5};
 		
 		AddClac addCalc = new AddClac();
-		int sum = addCalc.sumClac(num);
+		int sum = addCalc.sumCalc(num);
 		System.out.println(sum);
 		
 	}

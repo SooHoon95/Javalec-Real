@@ -2,6 +2,7 @@ package com.javalec.base;
 
 import java.util.Scanner;
 
+
 import com.javalec.function.DmbCellPhone;
 
 public class Main {
@@ -19,7 +20,7 @@ public class Main {
 		phone.sendVoice("여보세요" );
 		phone.receiveVoice("안녕하세요! 저는 홍길동 인데요");
 		phone.sendVoice("아! 반갑습니다. 그럼 안녕히 ~~~");
-		phone.turnOnDmb(10);
+		phone.turnOnDmb();
 		phone.changeChannelDmb(12);
 		phone.hangUp();
 	}

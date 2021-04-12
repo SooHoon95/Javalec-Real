@@ -34,6 +34,14 @@ public class ChildMenu extends ParentsMenu {
 		System.out.println("미역된장");
 		
 	}
+
+	@Override
+	public void makeGal() {
+		// TODO Auto-generated method stub
+		super.makeGal();
+		System.out.println("대자 갈비찜");
+	}
+	
 	
 	}
 	

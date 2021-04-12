@@ -14,7 +14,7 @@ public class ThrowsClass {
 	private void doA() {
 		System.out.println("doA");
 		int[] arr = {1,2,3,4};
-		System.out.println(arr[4]);
+		System.out.println(arr[3]);
 		System.out.println("endA");
 	}
 	

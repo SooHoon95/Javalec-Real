@@ -15,7 +15,8 @@ public class Parents {
 	
 	//Method
 	public void getFather() {
-		System.out.println("홍길동");
+		
+		System.out.println("From. " + pStr + "홍길동");
 	}
 	
 	public void getMother() {

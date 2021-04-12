@@ -4,8 +4,8 @@ public class CellPhone {
 
 	
 	//Fields
-	public String model ;
-	public String color ;
+	public String model = "자바폰";
+	public String color = "검정";
 	
 	//Constructor
 	public CellPhone() {

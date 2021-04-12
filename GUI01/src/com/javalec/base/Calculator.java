@@ -15,8 +15,9 @@ public class Calculator extends Exercise_01 {
 	
 	
 	//Method
-	public void Plus() {
-		tfinputNum1
+	
+	
+	
+	
 	}
 	
-}
