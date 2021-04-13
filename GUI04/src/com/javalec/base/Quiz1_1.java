@@ -100,7 +100,7 @@ public class Quiz1_1 {
 			cbAdd = new JCheckBox("Add");
 			cbAdd.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					CheckBox();
+					CheckCalc();
 				}
 			});
 			cbAdd.setBounds(172, 20, 109, 23);
@@ -112,7 +112,7 @@ public class Quiz1_1 {
 			cbMin = new JCheckBox("MInus");
 			cbMin.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					CheckBox();
+					CheckCalc();
 				}
 			});
 			cbMin.setBounds(283, 20, 128, 23);
@@ -124,7 +124,7 @@ public class Quiz1_1 {
 			cbMul = new JCheckBox("Multiple");
 			cbMul.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					CheckBox();
+					CheckCalc();
 				}
 			});
 			cbMul.setBounds(172, 67, 109, 23);
@@ -136,7 +136,7 @@ public class Quiz1_1 {
 			cbDiv = new JCheckBox("Devide");
 			cbDiv.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					CheckBox();
+					CheckCalc();
 				}
 			});
 			cbDiv.setBounds(283, 67, 128, 23);
@@ -171,41 +171,42 @@ public class Quiz1_1 {
 		return lblResult4;
 	}
 	
-	public void CheckBox() {
-		ArrayList<String> Result = new ArrayList<String>();
-		int num1 = Integer.parseInt(tfinput1.getText());
-		int num2 = Integer.parseInt(tfinput2.getText());
-		Claculation Calc = new Claculation(num1,num2);
+//	======================================
+	
+	public void CheckCalc() {
+		ArrayList<String> Calculator = new ArrayList<String>();
+		int num1 = Integer.parseInt(tfinput1.getText().toString());
+		int num2 = Integer.parseInt(tfinput2.getText().toString());
+		Calculate Calc = new Calculate(num1,num2);
 		
 		lblResult1.setText("");
 		lblResult2.setText("");
 		lblResult3.setText("");
 		lblResult4.setText("");
 		
-		if (cbAdd.isSelected() == true)Result.add(Calc.Add());
-		if (cbMin.isSelected() == true)Result.add(Calc.Min());
-		if (cbMul.isSelected() == true)Result.add(Calc.Mul());
-		if (cbDiv.isSelected() == true)Result.add(Calc.Div());
+		if(cbAdd.isSelected()==true)Calculator.add(Calc.Plus());
+		if(cbMin.isSelected()==true)Calculator.add(Calc.Min());
+		if(cbMul.isSelected()==true)Calculator.add(Calc.Mul());
+		if(cbDiv.isSelected()==true)Calculator.add(Calc.Div());
 		
-		for(int i = 0; i<Result.size(); i++) {
-			switch(i) {
-			case 0 :
-				lblResult1.setText(Result.get(i));
+		for(int i=0; i<Calculator.size(); i++) {
+			switch(i){
+			case 0:
+				lblResult1.setText(Calculator.get(i));
 				break;
-			case 1 :
-				lblResult2.setText(Result.get(i));
+			case 1:
+				lblResult2.setText(Calculator.get(i));
 				break;
-			case 2 :
-				lblResult3.setText(Result.get(i));
+			case 2:
+				lblResult3.setText(Calculator.get(i));
 				break;
-			case 3 :
-				lblResult4.setText(Result.get(i));
+			case 3:
+				lblResult4.setText(Calculator.get(i));
 				break;
 			}
 		}
-			Result.clear();
-
-	
-	
+			Calculator.clear();
 	}
+	
+	
 }//=======

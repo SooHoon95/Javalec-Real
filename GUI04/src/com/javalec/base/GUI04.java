@@ -105,20 +105,7 @@ public class GUI04 {
 		return tfFruit;
 	}
 	
-	private void fruitCheck() {	
-		tfFruit.setText("");					//기본값 지정으로 아무것도 선택안하면 칸 비우기.
-		if(chApple.isSelected() == true) {		// 체크박스가 선택됐느지 물어보는 메소드. 불린 값이기때문에 true
-		tfFruit.setText("Apple이 선택 되었습니다.");
-		}
-	
-		if(chBanana.isSelected()== true ) {
-			tfFruit.setText("Banana가 선택 되었습니다.");
-		}
-		if (chApple.isSelected()== true && chBanana.isSelected() == true) {
-			tfFruit.setText("Apple 과 Banana가 선택 되었습니다.");
-		}
-	
-	}
+
 	private JRadioButton getRbKBS() {
 		if (rbKBS == null) {
 			rbKBS = new JRadioButton("KBS");
@@ -175,5 +162,20 @@ public class GUI04 {
 			tfbroad.setText("MBC가 선택 되었습니다");
 		}
 
+	}	
+		
+		
+		private void fruitCheck() {	
+			tfFruit.setText("");					// 기본값 지정으로 아무것도 선택안하면 칸 비우기.
+			if(chApple.isSelected() == true) {		// 체크박스가 선택됐는지 물어보는 메소드. 불린 값이기때문에 true
+				tfFruit.setText("Apple이 선택 되었습니다.");
+			}
+			
+			if(chBanana.isSelected()== true ) {
+				tfFruit.setText("Banana가 선택 되었습니다.");
+			}
+			if (chApple.isSelected()== true && chBanana.isSelected() == true) {
+				tfFruit.setText("Apple 과 Banana가 선택 되었습니다.");
+			}
 	}
 }

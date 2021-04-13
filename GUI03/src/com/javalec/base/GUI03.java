@@ -114,10 +114,9 @@ private void CalcResult() {
 		tfResult.setText(Integer.toString(num1-num2));
 	}else if (calc == "X") {
 		tfResult.setText(Integer.toString(num1*num2));
-	}else if (calc=="/") {
+	}else if (calc.equals("/")) {
 		tfResult.setText(String.format("%.3f", ((double)num1/(double)num2)));
-	}
-	else if (calc =="/" && num2 == 0) {
+	}else if (calc.equals("/") && num2 == 0) {
 			JOptionPane.showMessageDialog(null , "Can't share by 0");;
 		}
 		

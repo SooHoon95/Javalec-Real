@@ -199,7 +199,9 @@ public class Exercise_01 {
 			btnPlus.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 //					addSum();
-					calc.Plus(tfinputNum1.getText(), tfinputNum2.getText());
+					tffactor1.setText(tfinputNum1.getText());
+					tffactor2.setText(tfinputNum2.getText());
+					tfResult.setText(calc.Plus(tfinputNum1.getText(), tfinputNum2.getText()));
 				}
 			});
 			btnPlus.setBounds(176, 32, 53, 23);
@@ -212,7 +214,9 @@ public class Exercise_01 {
 			btnMinus.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 //					Minus();
-					calc.Minus(tfinputNum1.getText(), tfinputNum2.getText());
+					tffactor1.setText(tfinputNum1.getText());
+					tffactor2.setText(tfinputNum2.getText());
+					tfResult.setText(calc.Minus(tfinputNum1.getText(), tfinputNum2.getText()));
 				}
 			});
 			btnMinus.setBounds(241, 32, 53, 23);
@@ -225,7 +229,9 @@ public class Exercise_01 {
 			btnMul.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 //					Multi();
-					calc.Multi(tfinputNum1.getText(), tfinputNum2.getText());
+					tffactor1.setText(tfinputNum1.getText());
+					tffactor2.setText(tfinputNum2.getText());
+					tfResult.setText(calc.Multi(tfinputNum1.getText(), tfinputNum2.getText()));
 				}
 			});
 			btnMul.setBounds(306, 32, 53, 23);
@@ -241,7 +247,9 @@ public class Exercise_01 {
 					tffactor2.setText(tfinputNum2.getText());
 					lblsign.setText("+");
 //					Share();
-					calc.Share(tfinputNum1.getText(), tfinputNum2.getText());
+					tffactor1.setText(tfinputNum1.getText());
+					tffactor2.setText(tfinputNum2.getText());
+					tfResult.setText(calc.Share(tfinputNum1.getText(), tfinputNum2.getText()));
 				}
 			});
 			btnDiv.setBounds(371, 32, 53, 23);
