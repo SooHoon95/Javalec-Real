@@ -10,14 +10,14 @@ import javax.swing.DefaultComboBoxModel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class GUI02 {
+public class Practice {
 
-	private JFrame frmCombobox;
+	private JFrame ComboBox;
 	private JComboBox cbFruits;
 	private JTextField tfFruits;
-	private JButton btnAdd;
-	private JTextField tfAdd;
 	private JComboBox cbAdd;
+	private JTextField tfAdd;
+	private JButton btnAdd;
 
 	/**
 	 * Launch the application.
@@ -26,8 +26,8 @@ public class GUI02 {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					GUI02 window = new GUI02();
-					window.frmCombobox.setVisible(true);
+					Practice window = new Practice();
+					window.ComboBox.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -38,7 +38,7 @@ public class GUI02 {
 	/**
 	 * Create the application.
 	 */
-	public GUI02() {
+	public Practice() {
 		initialize();
 	}
 
@@ -46,72 +46,69 @@ public class GUI02 {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frmCombobox = new JFrame();
-		frmCombobox.setTitle("ComboBox");
-		frmCombobox.setBounds(100, 100, 450, 300);
-		frmCombobox.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frmCombobox.getContentPane().setLayout(null);
-		frmCombobox.getContentPane().add(getCbFruits());
-		frmCombobox.getContentPane().add(getTfFruits());
-		frmCombobox.getContentPane().add(getBtnAdd());
-		frmCombobox.getContentPane().add(getTfAdd());
-		frmCombobox.getContentPane().add(getCbAdd());
+		ComboBox = new JFrame();
+		ComboBox.setBounds(100, 100, 450, 300);
+		ComboBox.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		ComboBox.getContentPane().setLayout(null);
+		ComboBox.getContentPane().add(getCbFruits());
+		ComboBox.getContentPane().add(getTfFruits());
+		ComboBox.getContentPane().add(getCbAdd());
+		ComboBox.getContentPane().add(getTfAdd());
+		ComboBox.getContentPane().add(getBtnAdd());
 	}
 	private JComboBox getCbFruits() {
 		if (cbFruits == null) {
 			cbFruits = new JComboBox();
 			cbFruits.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					String stFruits = cbFruits.getSelectedItem().toString();
-					tfFruits.setText(stFruits);
-					
-					
+					String stFruit = cbFruits.getSelectedItem().toString();
+					tfFruits.setText(stFruit);
 				}
 			});
 			cbFruits.setModel(new DefaultComboBoxModel(new String[] {"Apple", "Banana", "Grape", "Mango", "Melon"}));
-			cbFruits.setBounds(27, 24, 130, 27);
+			cbFruits.setBounds(36, 24, 97, 25);
 		}
 		return cbFruits;
 	}
 	private JTextField getTfFruits() {
 		if (tfFruits == null) {
 			tfFruits = new JTextField();
-			tfFruits.setBounds(269, 23, 130, 26);
+			tfFruits.setBounds(236, 26, 116, 21);
 			tfFruits.setColumns(10);
 		}
 		return tfFruits;
+	}
+	private JComboBox getCbAdd() {
+		if (cbAdd == null) {
+			cbAdd = new JComboBox();
+			cbAdd.setBounds(236, 127, 116, 25);
+		}
+		return cbAdd;
+	}
+	private JTextField getTfAdd() {
+		if (tfAdd == null) {
+			tfAdd = new JTextField();
+			tfAdd.setColumns(10);
+			tfAdd.setBounds(36, 129, 116, 21);
+		}
+		return tfAdd;
 	}
 	private JButton getBtnAdd() {
 		if (btnAdd == null) {
 			btnAdd = new JButton("Add");
 			btnAdd.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					addCombo();
+					addString();
 				}
 			});
-			btnAdd.setBounds(27, 187, 117, 29);
+			btnAdd.setBounds(36, 173, 97, 23);
 		}
 		return btnAdd;
 	}
-	private JTextField getTfAdd() {
-		if (tfAdd == null) {
-			tfAdd = new JTextField();
-			tfAdd.setBounds(27, 149, 130, 26);
-			tfAdd.setColumns(10);
-		}
-		return tfAdd;
-	}
-	private JComboBox getCbAdd() {
-		if (cbAdd == null) {
-			cbAdd = new JComboBox();
-			cbAdd.setBounds(269, 150, 130, 27);
-		}
-		return cbAdd;
-	}
 	
-	private void addCombo() {
-		String stTemp = tfAdd.getText();
-		cbAdd.addItem(stTemp);    
+	public void addString() {
+		String str1 = tfAdd.getText();
+		cbAdd.addItem(str1);
 	}
 	
 	
@@ -119,4 +116,4 @@ public class GUI02 {
 	
 	
 	
-}//===
+}//===================

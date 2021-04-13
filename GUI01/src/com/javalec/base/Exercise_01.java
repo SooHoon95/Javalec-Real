@@ -9,6 +9,8 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.event.ActionEvent;
 
 public class Exercise_01 {
@@ -27,6 +29,12 @@ public class Exercise_01 {
 	private JButton btnMinus;
 	private JButton btnMul;
 	private JButton btnDiv;
+	/*
+	 * 
+	 * Claculator 클래스 이용해서 사칙연산 수행하기 위해서 클래스 변수 선언
+	 * 
+	 */
+		Calculator calc = new Calculator();
 	/**
 	 * Launch the application.
 	 */
@@ -72,6 +80,8 @@ public class Exercise_01 {
 		frame.getContentPane().add(getBtnMinus());
 		frame.getContentPane().add(getBtnMul());
 		frame.getContentPane().add(getBtnDiv());
+		frame.setLocationRelativeTo(null);		/// 화면 중앙에 위치하기
+		
 		
 		JButton btnReset = new JButton("Reset");
 		btnReset.addActionListener(new ActionListener() {
@@ -81,6 +91,8 @@ public class Exercise_01 {
 		});
 		btnReset.setBounds(176, 81, 97, 23);
 		frame.getContentPane().add(btnReset);
+		
+		JOptionPane.showMessageDialog(null, "숫자만 입력해주세요!!");	///숫자만 입력하라는 메시지 띠우기
 	}
 
 	private JLabel getLblNewLabel() {
@@ -102,8 +114,22 @@ public class Exercise_01 {
 		if (tfinputNum1 == null) {
 			tfinputNum1 = new JTextField();
 			tfinputNum1.setHorizontalAlignment(SwingConstants.RIGHT);
+			tfinputNum1.addKeyListener(new KeyAdapter() {
+				
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if (e.getKeyChar() >= '0' && e.getKeyChar() <= '9') {
+					
+				}else {
+					JOptionPane.showMessageDialog(null, "숫자만 입력하세요 !", "경고", JOptionPane.ERROR_MESSAGE);
+					tfinputNum1.setText("");
+				}
+					}
+			});
+			tfinputNum1.setToolTipText("숫자만");
 			tfinputNum1.setBounds(42, 33, 92, 21);
 			tfinputNum1.setColumns(10);
+			
 		}
 		return tfinputNum1;
 	}
@@ -172,7 +198,8 @@ public class Exercise_01 {
 			btnPlus = new JButton("+");
 			btnPlus.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					addSum();
+//					addSum();
+					calc.Plus(tfinputNum1.getText(), tfinputNum2.getText());
 				}
 			});
 			btnPlus.setBounds(176, 32, 53, 23);
@@ -184,8 +211,8 @@ public class Exercise_01 {
 			btnMinus = new JButton("-");
 			btnMinus.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					Minus();
-					
+//					Minus();
+					calc.Minus(tfinputNum1.getText(), tfinputNum2.getText());
 				}
 			});
 			btnMinus.setBounds(241, 32, 53, 23);
@@ -197,7 +224,8 @@ public class Exercise_01 {
 			btnMul = new JButton("X");
 			btnMul.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					Multi();
+//					Multi();
+					calc.Multi(tfinputNum1.getText(), tfinputNum2.getText());
 				}
 			});
 			btnMul.setBounds(306, 32, 53, 23);
@@ -212,7 +240,8 @@ public class Exercise_01 {
 					tffactor1.setText(tfinputNum1.getText());
 					tffactor2.setText(tfinputNum2.getText());
 					lblsign.setText("+");
-					Share();
+//					Share();
+					calc.Share(tfinputNum1.getText(), tfinputNum2.getText());
 				}
 			});
 			btnDiv.setBounds(371, 32, 53, 23);
@@ -222,58 +251,58 @@ public class Exercise_01 {
 	
 	
 	//=======  불러올 메소드 작성
-	public void addSum() {
-		int tot =0;
-		tffactor1.setText(tfinputNum1.getText());
-		tffactor2.setText(tfinputNum2.getText());
-		lblsign.setText("+");
-		int wkNum1 = Integer.parseInt(tfinputNum1.getText());
-		int wkNum2 = Integer.parseInt(tfinputNum2.getText());
-		int wkResult = wkNum1 + wkNum2;
-		
-		String addResult = Integer.toString(wkResult);
-		tfResult.setText(addResult);
-	}
+//	public void addSum() {
+//		int tot =0;
+//		tffactor1.setText(tfinputNum1.getText());
+//		tffactor2.setText(tfinputNum2.getText());
+//		lblsign.setText("+");
+//		int wkNum1 = Integer.parseInt(tfinputNum1.getText());
+//		int wkNum2 = Integer.parseInt(tfinputNum2.getText());
+//		int wkResult = wkNum1 + wkNum2;
+//		
+//		String addResult = Integer.toString(wkResult);
+//		tfResult.setText(addResult);
+//	}
 	
 	
-	public void Minus() {
-		tffactor1.setText(tfinputNum1.getText());
-		tffactor2.setText(tfinputNum2.getText());
-		lblsign.setText("-");
-		int wkNum1 = Integer.parseInt(tfinputNum1.getText());
-		int wkNum2 = Integer.parseInt(tfinputNum2.getText());
-		int wkResult = wkNum1 - wkNum2;
-		
-		String minResult = Integer.toString(wkResult);
-		tfResult.setText(minResult);
-		
-	}
-	
-	public void Multi() {
-		tffactor1.setText(tfinputNum1.getText());
-		tffactor2.setText(tfinputNum2.getText());
-		lblsign.setText("X");
-		int wkNum1 = Integer.parseInt(tfinputNum1.getText());
-		int wkNum2 = Integer.parseInt(tfinputNum2.getText());
-		int wkResult = wkNum1 * wkNum2;
-		
-		String MulResult = Integer.toString(wkResult);
-		tfResult.setText(MulResult);
-	}
-	
-	public void Share() {
-		tffactor1.setText(tfinputNum1.getText());
-		tffactor2.setText(tfinputNum2.getText());
-		lblsign.setText("/");
-		int wkNum1 = Integer.parseInt(tfinputNum1.getText());
-		int wkNum2 = Integer.parseInt(tfinputNum2.getText());
-		double wkResult = (double)wkNum1 / (double)wkNum2;
-		
-		String divResult = Double.toString(wkResult);
-		if(wkNum2 == 0) {
-			JOptionPane.showMessageDialog(null, "0으로는 나눌 수 없습니다.");
-		}else tfResult.setText(String.format("%.3f", wkResult));
-	}
+//	public void Minus() {
+//		tffactor1.setText(tfinputNum1.getText());
+//		tffactor2.setText(tfinputNum2.getText());
+//		lblsign.setText("-");
+//		int wkNum1 = Integer.parseInt(tfinputNum1.getText());
+//		int wkNum2 = Integer.parseInt(tfinputNum2.getText());
+//		int wkResult = wkNum1 - wkNum2;
+//		
+//		String minResult = Integer.toString(wkResult);
+//		tfResult.setText(minResult);
+//		
+//	}
+//	
+//	public void Multi() {
+//		tffactor1.setText(tfinputNum1.getText());
+//		tffactor2.setText(tfinputNum2.getText());
+//		lblsign.setText("X");
+//		int wkNum1 = Integer.parseInt(tfinputNum1.getText());
+//		int wkNum2 = Integer.parseInt(tfinputNum2.getText());
+//		int wkResult = wkNum1 * wkNum2;
+//		
+//		String MulResult = Integer.toString(wkResult);
+//		tfResult.setText(MulResult);
+//	}
+//	
+//	public void Share() {
+//		tffactor1.setText(tfinputNum1.getText());
+//		tffactor2.setText(tfinputNum2.getText());
+//		lblsign.setText("/");
+//		int wkNum1 = Integer.parseInt(tfinputNum1.getText());
+//		int wkNum2 = Integer.parseInt(tfinputNum2.getText());
+//		double wkResult = (double)wkNum1 / (double)wkNum2;
+//		
+//		String divResult = Double.toString(wkResult);
+//		if(wkNum2 == 0) {
+//			JOptionPane.showMessageDialog(null, "0으로는 나눌 수 없습니다.");
+//		}else tfResult.setText(String.format("%.3f", wkResult));
+//	}
 	
 	public void Reset() {
 		
