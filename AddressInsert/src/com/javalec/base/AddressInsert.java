@@ -1,6 +1,6 @@
 package com.javalec.base;
 
-import java.awt.EventQueue;
+import java.awt.EventQueue; 
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -208,7 +208,7 @@ public class AddressInsert {
 			conn_mysql.close();
 			
 			
-			JOptionPane.showMessageDialog(null, "님의 정보가 입력되었습니다.");
+			JOptionPane.showMessageDialog(null, tfName.getText().trim() +"님의 정보가 입력되었습니다.");
 			
 			
 		} catch (Exception e) {
@@ -217,7 +217,8 @@ public class AddressInsert {
 		}
 	
 	private void check() {
-		 
+		
+		int i = 0;
 		if ( tfName.getText().trim().equals("")) {
 			str = "이름";
 			tfName.requestFocus();
@@ -249,7 +250,6 @@ public class AddressInsert {
 		if (tfName.getText().trim().length() == 0) {
 			i++;
 			message = "Name ";
-			message = "please check the blank of " + message;
 		}
 		if(tftel.getText().trim().length() == 0) {
 			i++;
@@ -268,15 +268,13 @@ public class AddressInsert {
 			i++;
 			message = message + "relation ";
 		}
-		//		}else if 
-		JOptionPane.showMessageDialog(null, message + ".");
-//		if (i==0) {
-//			insertAction();
-//		}
+		if (i == 1) {
+			JOptionPane.showMessageDialog(null, "check the" + message);
+		}
 		
 		return i;
 			
-		
+	
 	}
 	
 	
