@@ -3,8 +3,7 @@ package com.javalec.base;
 import java.util.Scanner;
 
 public class Gugu {
-
-	public static void main(String[] args) {
+3tring[] args) {
 		// TODO Auto-generated method stub
 
 		//	선언
